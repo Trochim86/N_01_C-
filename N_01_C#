@@ -1,0 +1,59 @@
+10-3. Guest: Write a program that prompts the user for their name. When they respond, write
+their name to a file called guest.txt.
+--------------------------------------------
+Python
+
+use_name = input("Enter your name: ")
+print(use_name)
+
+file_n ="guest.txt."
+with open(file_n, 'a') as file_0:
+    file_0.write(use_name)
+--------------------------------------------    
+c#
+....
+--------------------------------------------
+10-4. Guest Book: Write a while loop that prompts users for their name. When they enter
+their name, print a greeting to the screen and add a line recording their visit in a file called
+guest_book.txt. Make sure each entry appears on a new line in the file.
+--------------------------------------------
+Python
+
+use_name = input("Enter your name: ")
+print(use_name)
+
+file_n ="guest_book.txt"
+with open(file_n, 'a') as file_0:
+    file_0.write(use_name)
+
+while use_name != 0:
+    print(f"greeting {use_name}")
+else:
+    print("Enter name.. ")
+--------------------------------------------
+C#
+....
+--------------------------------------------
+
+10-5. Programming Poll: Write a while loop that asks people why they like programming.
+Each time someone enters a reason, add their reason to a file that stores all the responses.
+--------------------------------------------
+Python
+
+use_p = input("why they like programming ?")
+print(use_p)
+
+file_n ="guest_book.txt"
+with open(file_n, 'a') as file_0:
+    file_0.write(use_p)
+
+while use_p != 0:
+    print(f"greeting {use_p}")
+else:
+    print("Enter name.. ")
+--------------------------------------------
+
+--------------------------------------------
+C#
+
+--------------------------------------------
