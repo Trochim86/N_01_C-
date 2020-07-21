@@ -26,7 +26,7 @@ file_n ="guest_book.txt"
 with open(file_n, 'a') as file_0:
     file_0.write(use_name)
 
-while use_name != 0:
+while use_name != 0: # or while True:
     print(f"greeting {use_name}")
 else:
     print("Enter name.. ")
