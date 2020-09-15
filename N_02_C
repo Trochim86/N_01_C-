@@ -1,0 +1,44 @@
+Konstruktor
+
+namespace ex_NC_15
+{
+    class ex_NC_15a
+    {
+        /* Tworzymy szablon dla klasy ' book' */
+        public string title;
+        public string author;
+        public int pages;
+
+        public ex_NC_15a(string aTiitle, string aAuthor, int aPages); // budowa konstruktora
+        {
+            title = aTiitle;
+            author = aAuthor;
+            pages = aPages;
+        }
+    }
+    
+}
+
+
+ Klasa
+ 
+class Program
+    {
+        static void Main(string[] args)
+        {
+            ex_NC_15a book1 = new ex_NC_15a("Wojna", "Ludzie", 2020); // Tworzymy instancje ksiązki
+
+            
+
+            /* Mozna kopiowac dowalna ilość klas*/
+
+            ex_NC_15a book2 = new ex_NC_15a("Droga", "P.T", 200);
+
+            book2.title = "Super zmiana";
+
+            Console.WriteLine(book2.title);
+            
+            Console.ReadLine();
+        }
+    }
+}
