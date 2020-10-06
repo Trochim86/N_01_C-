@@ -1,0 +1,36 @@
+using System;// alias do biblioteki jakiej będziemy uzywać. Można usunąć ale do każdej motody należy dodać zwrot system.--> (np)consoel...
+
+namespace ex_NC_01
+{
+    class Program
+    {   //Stała
+        public const string FileName = "D:\\Dane\\Nauka\\C#\\ImportFile.xlsx";
+        static void Main(string[] args)
+        {
+            Console.WriteLine(" WELCOME TO WAREHOUSE APP !");
+            Console.WriteLine("PLEASE LET ME KNOW WHAT YOU WANT TO DO :");
+            Console.WriteLine("1. Add Item");
+            Console.WriteLine("2. Remove Item");
+            Console.WriteLine("3. Check Item");
+            Console.WriteLine("Press 1, 2 or 3 ...");
+
+
+            string choise = Console.ReadLine();
+
+            Console.WriteLine($"You havw chosen option number : {choise}");
+            Console.ReadKey();
+           
+            
+
+            //Zmienna
+
+            
+            int chosenOption = 0;
+
+            Int32.TryParse(choise, out chosenOption); // Zmiana string na int do przypisanej zmiennej 
+
+            Console.WriteLine("Please choose another number :...");
+
+            choise = Console.ReadLine();
+
+            Int32.TryParse(choise, out chosenOption);
