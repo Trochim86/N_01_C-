@@ -1,0 +1,45 @@
+namespace ex_NC_16
+{
+    public class Person
+    {
+        // właściwość
+        public string Sex { get; set; }
+
+        public string HairColor { get; set; }
+
+        public int Height { get; set; }
+
+        public int Weight{ get; set; }
+
+        // metody są wykonywane
+        public void Eat()
+        { }
+
+        public void Slepp()
+        { }
+
+        public void Walk()
+        { }
+
+    }
+}
+
+
+
+namespace ex_NC_16
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Person person = new Person();
+            person.Weight = 73;
+            person.Sex = "male";
+            person.HairColor = "Black";
+            person.Height = 172;
+
+            Console.WriteLine(person.Sex);
+            Console.ReadKey();
+        }
+    }
+}
