@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+{
+    
+}
+
+namespace ex_NC_06
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //System.Console.WriteLine("How many student will be in that class ?");
+            //var studentCount = int.Parse(Console.ReadLine());
+
+            //var studentName =  new string[studentCount];
+
+            var studentName =  new List<string>();
+            var studentGrade =  new List<int>();
+            var adding =true;
+            while (adding)
+            {
+               {
+                System.Console.Write("Student Name:\n");
+                studentName.Add(Console.ReadLine);
+
+                System.Console.Write("Student Grade:\n");
+                studentGrade.Add(int.Parse(Console.ReadLine()));
+
+                System.Console.WriteLine("Add another ?? y/n");
+
+                if (Console.ReadLine() != "y")
+                {
+                    adding = false;
+                }
+
+               } 
+
+            }
+
+            for (int i = 0; i < studentName.Count; i++)
+
+            {
+                System.Console.WriteLine("Student Name: {0}, Grade: {1} ", studentName[i], studentGrade[i]);
+                
+            }
+            System.Console.WriteLine("Thats All thx, bye ..");
+            
+            
+        }
+    }
+}
