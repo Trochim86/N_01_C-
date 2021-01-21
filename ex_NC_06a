@@ -1,0 +1,146 @@
+using ex_NC_06_02;
+using System;
+using System.Collections.Generic;
+
+
+namespace ex_NC_06_02
+{
+
+    class Data
+    {
+        public string Name;
+        public string Age;
+        public string Month;
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            var data = new Data();
+
+            var student = new List<Student>();
+
+            var adding = true;
+
+            while (adding)
+            {
+                var newStudent = new Student();
+
+                newStudent.Name = Util.Console.Ask("Student Name:\n");
+                
+
+                newStudent.Grade = int.Parse(Util.Console.Ask("Student Grade:\n"));
+
+                newStudent.BDay = Util.Console.Ask("Student BDay:\n");
+
+                newStudent.Address = Util.Console.Ask("Student Address:\n");
+
+                newStudent.Phone = int.Parse(Util.Console.Ask("Student Phone:\n"));
+
+                student.Add(newStudent);
+                Student.Count++;
+                Console.WriteLine("Student count: {0}" ,Student.Count);
+
+
+                System.Console.WriteLine("Add another ?? y/n");
+
+                if (Console.ReadLine() != "y")
+
+                    adding = false;
+
+
+            }
+
+            foreach (var Student in student)
+
+
+            {
+                System.Console.WriteLine("Student Name: {0}, Grade: {1} ", Student.Name, Student.Grade);
+            }
+
+
+        }
+
+        static void Import()
+        {
+            var importedStudent = new Student("Jarek", 34, "23 april 1987", "Warszawa", 345678908);
+            Console.WriteLine(importedStudent.Name);
+        }
+    }
+
+class Member
+    {
+        public string Name;
+        public string Address;
+        protected int phone;
+
+        //Właściwości 
+        public int Phone
+        {
+            set { phone = value; }
+        }
+    }
+}
+
+class Student : Member
+
+{
+    static public int Count = 0;
+
+    
+    //Charakterystyka pola
+
+    public string Name;
+    public int Grade;
+    public string BDay;
+    public string Address;
+    private int phone;
+    
+
+
+
+    //Konstruktor
+    public Student()
+    {
+
+    }
+    public Student(string name, int grade, string bDay, string address, int phone )
+    {
+        Name = name;
+        Grade = grade;
+        BDay = bDay;
+        Address = address;
+        Phone = phone;
+
+    }
+
+
+
+}
+class Teacher : Member
+{
+    public string Name;
+    public string Address;
+    public int Phone;
+    public string Subject;
+}
+-------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Util
+{
+    class Console
+    {
+        static public string Ask( string question)
+        {
+            System.Console.Write(question);
+            return System.Console.ReadLine();
+        }
+    }
+}
