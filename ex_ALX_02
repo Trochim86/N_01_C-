@@ -1,0 +1,108 @@
+using System;
+
+namespace ex_ALX_03
+{
+    abstract class Kontrakt
+    {
+        public Decimal StawkaMiesieczna;
+       
+        public Kontrakt(Decimal Wysokosc)
+        {
+            this.StawkaMiesieczna = Wysokosc;
+        }
+
+        public abstract decimal Pensja();
+
+        public override string ToString()
+        {
+            return "Kontrakt: " + this.StawkaMiesieczna;
+        }
+    }
+
+    class Stazysta : Kontrakt
+    {
+        public Stazysta(decimal wysokoscWynagrodznia) 
+            :base(wysokoscWynagrodznia) 
+        {
+        }
+
+        public override decimal Pensja()
+        {
+            return StawkaMiesieczna;
+        }
+    }
+
+    class Etatowiec : Kontrakt
+    {
+        public int nadgodziny;
+
+        public Etatowiec(int nadgodziny, decimal miesiecznyHajs)
+            :base(miesiecznyHajs)
+        {
+            this.nadgodziny = nadgodziny;
+        }
+
+        public override decimal Pensja()
+        {
+            return StawkaMiesieczna + nadgodziny * (StawkaMiesieczna / 60);
+        }
+    }
+
+    
+    class Pracownik
+    {
+        public string imie;
+        public string nazwisko;
+        public Kontrakt Kon;
+
+        public Pracownik(string imie, string nazwisko, Kontrakt kontrakt)
+        {
+            this.imie = imie;
+            this.nazwisko = nazwisko;
+            this.Kon = kontrakt;
+        }
+
+        public void UstawNowyKontrakt(Kontrakt kontrakt)
+        {
+            this.Kon = kontrakt;
+        }
+        public decimal PobierzWielkoscWynagrodzenia ()
+        {
+            return Kon.Pensja();
+        }
+
+
+        public override string ToString()
+        {
+            return "PRACOWNIK: " + this.imie + " " + this.nazwisko + " " + this.Kon + this.Kon;
+        }
+
+        public void Wypisz()
+        {
+
+            Console.WriteLine(imie + "");
+            Console.WriteLine(nazwisko + "");
+            Console.WriteLine(Kon + "");
+
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Pracownik jan = new Pracownik("Jan", "Kowalski",new Etatowiec(1200, 160));
+            Pracownik karol = new Pracownik("Jan", "Kowalski",new Stazysta(800));
+            Pracownik zbyszek = new Pracownik("Jan", "Kowalski", new Etatowiec(3200, 60));
+
+            Console.WriteLine(jan);
+
+            jan.UstawNowyKontrakt(new Kontrakt(5200, 1, 10));
+            Console.WriteLine(jan);
+            Console.WriteLine(jan.PobierzWielkoscWynagrodzenia());
+            jan.Wypisz();
+            Console.ReadLine();
+
+        }
+    }
+}
